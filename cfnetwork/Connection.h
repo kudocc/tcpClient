@@ -2,8 +2,8 @@
 //  Connection.h
 //  cfnetwork
 //
-//  Created by yuanrui on 14-9-18.
-//  Copyright (c) 2014年 yuanrui. All rights reserved.
+//  Created by KudoCC on 14-9-18.
+//  Copyright (c) 2014年 KudoCC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -2,8 +2,8 @@
 //  cfnetworkTests.m
 //  cfnetworkTests
 //
-//  Created by yuanrui on 14-7-16.
-//  Copyright (c) 2014年 yuanrui. All rights reserved.
+//  Created by KudoCC on 14-7-16.
+//  Copyright (c) 2014年 KudoCC. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

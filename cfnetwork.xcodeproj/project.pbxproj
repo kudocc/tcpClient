@@ -299,7 +299,7 @@
 			attributes = {
 				CLASSPREFIX = KD;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = yuanrui;
+				ORGANIZATIONNAME = KudoCC;
 				TargetAttributes = {
 					27B4BD8219764BE700492E69 = {
 						SystemCapabilities = {
