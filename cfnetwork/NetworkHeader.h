@@ -13,12 +13,15 @@
 #import "CSerialization.h"
 #import "CDeserialization.h"
 
-#pragma pack(1)
+const uint32_t Protocol_Version = 0 ;
+
+//#pragma pack(1)
 
 typedef struct structNetWorkHeader {
     uint32_t length ;   // length of the packet(including header)
     uint32_t transId ;  // transId
     uint32_t cmd ;      // command of packet
+    uint32_t version ;  // version of protocol
 } NetWorkHeader ;
 
 struct structBaseNetwork {
@@ -30,18 +33,27 @@ public:
         header.length = packetLength() ;
         header.transId = 0 ;
         header.cmd = 0 ;
+        header.version = Protocol_Version ;
     }
     
     structBaseNetwork(const structBaseNetwork &baseNetwork) {
         header.length = baseNetwork.header.length ;
         header.transId = baseNetwork.header.transId ;
         header.cmd = baseNetwork.header.cmd ;
+        header.version = baseNetwork.header.version ;
+    }
+    
+    void setTransId(uint32_t transId) {
+        header.transId = transId ;
     }
     
     virtual uint32_t serialization(CSerialization *serial) {
+        header.length = packetLength() ;
+        
         serial->serialize(header.length) ;
         serial->serialize(header.transId) ;
         serial->serialize(header.cmd) ;
+        serial->serialize(header.version) ;
         return packetLength() ;
     }
     
@@ -49,6 +61,7 @@ public:
         deSerial->deSerialize(header.length) ;
         deSerial->deSerialize(header.transId) ;
         deSerial->deSerialize(header.cmd) ;
+        deSerial->deSerialize(header.version) ;
         return packetLength() ;
     }
     
@@ -96,6 +109,6 @@ public:
 } ;
 typedef struct structTextSend TextPacket ;
 
-#pragma pack()
+//#pragma pack()
 
 #endif

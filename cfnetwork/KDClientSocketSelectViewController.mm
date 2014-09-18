@@ -100,9 +100,8 @@
     if ([dataSend length] > 0) {
         if ([_connection isConnect]) {
             TextPacket s_packet ;
-            s_packet.header.transId = [KDNetworkUtility generatorTransId] ;
+            s_packet.setTransId([KDNetworkUtility generatorTransId]) ;
             s_packet.textLen = [dataSend length] ;
-            s_packet.header.length = s_packet.packetLength() ;
             memcpy(s_packet.text, dataSend.bytes, [dataSend length]) ;
             KDPacket *packet = [KDPacket serialization:&s_packet] ;
             [_connection sendData:packet] ;
