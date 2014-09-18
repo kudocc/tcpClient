@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@interface TestObj : NSObject
+
+@property (nonatomic, assign) int value ;
+
+@end
+
 @interface KDAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
