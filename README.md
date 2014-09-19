@@ -3,8 +3,8 @@ tcpClient
 
 iOS app using socket to interact with simple server (support voip)
 
-You can custom the protocol, all custom protocols are a subclass of BaseNetworkPacket, there is an example protocol named TextPacket. Two c++ class CSerialization and CDeserialization implement serialization and deserialization.
+You can custom the protocol, all custom protocols are subclass from `BaseNetworkPacket` class. There is an example protocol named TextPacket, you can create another one like it. Two c++ class `CSerialization` and `CDeserialization` implement serialization and deserialization.
 
-KDConnection class is a tcp connection manager with select mode(implement by socket), you can test it in KDClientSocketSelectViewController class.
+`KDConnection` class holds a tcp connection which is select mode, it is used in `KDClientSocketSelectViewController` view controller.
 
-KDCFNetworkConnection class is a tcp connection manager support voip (implement by CFNetWork.framework), you can test it in KDSocketCFNetworkViewController class.
+`KDCFNetworkConnection` class holds a tcp connection which supports VOIP (implement by CFNetWork.framework), it is used in `KDSocketCFNetworkViewController` view controller.
