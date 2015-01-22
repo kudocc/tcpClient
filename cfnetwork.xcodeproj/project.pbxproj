@@ -29,6 +29,7 @@
 		27B4BDB019764BE800492E69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27B4BDAE19764BE800492E69 /* InfoPlist.strings */; };
 		27B4BDB219764BE800492E69 /* cfnetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B4BDB119764BE800492E69 /* cfnetworkTests.m */; };
 		27B4BDBD19764D2E00492E69 /* KDHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B4BDBC19764D2E00492E69 /* KDHostViewController.m */; };
+		27B61F541A70A45C0080E137 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27B61F531A70A45C0080E137 /* config.plist */; };
 		27BAABC819B6BAAD00C12C92 /* CDeserialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27BAABC619B6BAAD00C12C92 /* CDeserialization.cpp */; };
 		27BCEC7519B83C5D0034E56E /* KDPacketSendList.mm in Sources */ = {isa = PBXBuildFile; fileRef = 27BCEC7419B83C5D0034E56E /* KDPacketSendList.mm */; };
 		27BCFB9419CA7B84005203F8 /* KDCFNetworkConnection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 27BCFB9319CA7B84005203F8 /* KDCFNetworkConnection.mm */; };
@@ -83,6 +84,7 @@
 		27B4BDB119764BE800492E69 /* cfnetworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cfnetworkTests.m; sourceTree = "<group>"; };
 		27B4BDBB19764D2E00492E69 /* KDHostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDHostViewController.h; sourceTree = "<group>"; };
 		27B4BDBC19764D2E00492E69 /* KDHostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDHostViewController.m; sourceTree = "<group>"; };
+		27B61F531A70A45C0080E137 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		27BAABC619B6BAAD00C12C92 /* CDeserialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CDeserialization.cpp; sourceTree = "<group>"; };
 		27BAABC719B6BAAD00C12C92 /* CDeserialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDeserialization.h; sourceTree = "<group>"; };
 		27BAABC919B7008000C12C92 /* PacketCmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PacketCmd.h; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				27B306C11999C19300DF756E /* network */,
 				27B4BD9519764BE800492E69 /* KDAppDelegate.h */,
 				27B4BD9619764BE800492E69 /* KDAppDelegate.m */,
+				27B61F531A70A45C0080E137 /* config.plist */,
 				27B4BD9819764BE800492E69 /* Main.storyboard */,
 				27B4BD9E19764BE800492E69 /* Images.xcassets */,
 				27BD8CAD198F31C7001A96D6 /* cer */,
@@ -341,6 +344,7 @@
 				27BD8CAF198F31C7001A96D6 /* srca.cer in Resources */,
 				27B4BD9119764BE700492E69 /* InfoPlist.strings in Resources */,
 				27B4BD9A19764BE800492E69 /* Main.storyboard in Resources */,
+				27B61F541A70A45C0080E137 /* config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

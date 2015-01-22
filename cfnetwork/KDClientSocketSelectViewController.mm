@@ -139,7 +139,9 @@
 
 - (NSString *)ipAddress
 {
-    return @"172.16.40.62" ;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"] ;
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path] ;
+    return [dict objectForKey:@"serverIp"] ;
 }
 
 - (uint16_t)port
