@@ -132,7 +132,7 @@
 
 - (uint16_t)port
 {
-    return (uint16_t)70001 ;
+    return (uint16_t)7001 ;
 }
 
 - (void)dataReceived:(KDPacket *)packet

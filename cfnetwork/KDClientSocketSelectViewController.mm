@@ -43,6 +43,8 @@
 
 - (void)dealloc
 {
+    NSLog(@"%@, is main thread %u", NSStringFromSelector(_cmd), [NSThread isMainThread]) ;
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self] ;
 }
 
@@ -51,6 +53,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _connection = [[KDConnection alloc] initWithDelegate:self] ;
+    _connection.voipSupport = YES ;
     [_connection connect] ;
     
     _textViewRecv.editable = NO ;
@@ -62,6 +65,7 @@
                                              selector:@selector(handleDidEnterBackgroundNotification:)
                                                  name:UIApplicationDidEnterBackgroundNotification
                                                object:nil] ;
+    
 }
 
 - (void)doubleTap:(id)sender
@@ -140,7 +144,7 @@
 
 - (uint16_t)port
 {
-    return (uint16_t)70001 ;
+    return (uint16_t)7001 ;
 }
 
 - (void)dataReceived:(KDPacket *)packet
@@ -151,6 +155,7 @@
         textpacket->text[textpacket->textLen] = '\0' ;
         NSString *str = [NSString stringWithUTF8String:(const char *)textpacket->text] ;
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"received from server:%@", str) ;
             if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
                 [self presentLocalNotificationMessage:str] ;
             }

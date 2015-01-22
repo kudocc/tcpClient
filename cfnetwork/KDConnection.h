@@ -12,6 +12,7 @@
 @interface KDConnection : NSObject<Connection>
 
 @property (nonatomic, weak, readonly) id<ConnectionDelegate> delegate ;
+@property (nonatomic, assign) BOOL voipSupport ;
 
 - (id)initWithDelegate:(id<ConnectionDelegate>)aDelegate ;
 

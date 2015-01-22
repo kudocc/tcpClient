@@ -32,6 +32,9 @@ typedef enum eNetworkState {
 @property (nonatomic, assign) NetworkState networkState ;
 @property (nonatomic, strong) KDPacketSendList *packetSendList ;
 
+@property (nonatomic, strong) NSInputStream *inputStream ;
+@property (nonatomic, strong) NSOutputStream *outputStream ;
+
 @end
 
 @implementation KDConnection
@@ -134,7 +137,6 @@ typedef enum eNetworkState {
         
         int i = connect(clientSocket, (const struct sockaddr *)&server_addr, sizeof(server_addr)) ;
         if (i >= 0) {
-            /*
             if (_voipSupport) {
                 CFReadStreamRef readStreamRef = nil ;
                 CFWriteStreamRef writeStreamRef = nil ;
@@ -149,7 +151,6 @@ typedef enum eNetworkState {
                 [_inputStream open] ;
                 [_outputStream open] ;
             }
-            */
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.networkState = NetworkStateConnected ;
                 [_delegate connectionDidConnect] ;
@@ -250,6 +251,16 @@ typedef enum eNetworkState {
             printf("connect error %d\n", errno) ;
         }
         close(clientSocket) ;
+        
+        if (_inputStream) {
+            [_inputStream close] ;
+            _inputStream = nil ;
+        }
+        if (_outputStream) {
+            [_outputStream close] ;
+            _outputStream = nil ;
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             self.networkState = NetworkStateDisconnect ;
             [_delegate connectionDidDisconnect] ;
