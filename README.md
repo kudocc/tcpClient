@@ -1,7 +1,9 @@
 tcpClient
 =========
 
-iOS app using socket to interact with simple server (support voip)
+iOS app using socket to interact with [simple echo server](https://github.com/kudocc/simpleServer) (support VoIP which means when application is suspended, it can receive the packet sended from server on VoIp socket)
+
+There are two implementations on tcp client, one is using C socket, the other is using CFStream, but the C socket has a issue on supporting VoIP, it can't receive the packet from server a few minutes after app goes into background.
 
 You can custom the protocol, all custom protocols are subclass from `BaseNetworkPacket` class. There is an example protocol named TextPacket, you can create another one like it. Two c++ class `CSerialization` and `CDeserialization` implement serialization and deserialization.
 
