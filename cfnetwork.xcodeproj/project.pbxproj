@@ -143,14 +143,14 @@
 		27B306C21999C19E00DF756E /* viewController */ = {
 			isa = PBXGroup;
 			children = (
-				27B4BDBB19764D2E00492E69 /* KDHostViewController.h */,
-				27B4BDBC19764D2E00492E69 /* KDHostViewController.m */,
 				27B48338197CA7B000660458 /* KDClientSocketSelectViewController.h */,
 				27B48339197CA7B000660458 /* KDClientSocketSelectViewController.mm */,
 				27B2CEAC199C499100FAEB71 /* KDSocketCFNetworkViewController.h */,
 				27B2CEAD199C499100FAEB71 /* KDSocketCFNetworkViewController.mm */,
 				27BD8CAA198F2474001A96D6 /* KDHttpsViewController.h */,
 				27BD8CAB198F2474001A96D6 /* KDHttpsViewController.m */,
+				27B4BDBB19764D2E00492E69 /* KDHostViewController.h */,
+				27B4BDBC19764D2E00492E69 /* KDHostViewController.m */,
 			);
 			name = viewController;
 			sourceTree = "<group>";
