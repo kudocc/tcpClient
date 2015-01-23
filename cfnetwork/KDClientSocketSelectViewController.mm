@@ -15,6 +15,7 @@
 #import "KDPacketSendList.h"
 #import "KDNetworkUtility.h"
 #import "KDConnection.h"
+#import "KDConfig.h"
 
 @interface KDClientSocketSelectViewController () <ConnectionDelegate>
 
@@ -76,7 +77,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated] ;
-    self.title = @"TCP Client" ;
+    self.title = @"C socket" ;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -85,6 +86,9 @@
         [_connection closeConnection] ;
     }
     [super viewWillDisappear:animated] ;
+    
+    // Setting this parameter to nil releases the current handler block and prevents UIKit from scheduling the next wake
+    [[UIApplication sharedApplication] setKeepAliveTimeout:600 handler:nil] ;
 }
 
 - (void)didReceiveMemoryWarning
@@ -117,6 +121,18 @@
 - (void)handleDidEnterBackgroundNotification:(NSNotification *)notification
 {
     NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification) ;
+    
+    [[UIApplication sharedApplication] setKeepAliveTimeout:600 handler:^{
+        // check the connection state
+        if (!_connection || _connection.isConnect) {
+            NSLog(@"the connection is lost, now reconnect to server") ;
+            _connection = nil ;
+            // reconnect to server
+            _connection = [[KDConnection alloc] initWithDelegate:self] ;
+            _connection.voipSupport = YES ;
+            [_connection connect] ;
+        }
+    }] ;
 }
 
 - (void)presentLocalNotificationMessage:(NSString *)message
@@ -139,14 +155,12 @@
 
 - (NSString *)ipAddress
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"] ;
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path] ;
-    return [dict objectForKey:@"serverIp"] ;
+    return [KDConfig sharedConfig].serverIp ;
 }
 
 - (uint16_t)port
 {
-    return (uint16_t)7001 ;
+    return [KDConfig sharedConfig].serverPort ;
 }
 
 - (void)dataReceived:(KDPacket *)packet

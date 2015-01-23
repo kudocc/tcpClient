@@ -12,6 +12,7 @@
 #import "PacketMemoryManager.h"
 #import "NetworkHeader.h"
 #import "KDCFNetworkConnection.h"
+#import "KDConfig.h"
 
 @interface KDSocketCFNetworkViewController () <ConnectionDelegate>
 
@@ -48,6 +49,11 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)] ;
     tap.numberOfTapsRequired = 2 ;
     [self.view addGestureRecognizer:tap] ;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleDidEnterBackgroundNotification:)
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:nil] ;
 }
 
 - (void)doubleTap:(id)sender
@@ -58,7 +64,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated] ;
-    self.title = @"TCP Client support VOIP" ;
+    self.title = @"CFStream" ;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -67,6 +73,9 @@
         [_connection closeConnection] ;
     }
     [super viewWillDisappear:animated] ;
+    
+    // Setting this parameter to nil releases the current handler block and prevents UIKit from scheduling the next wake
+    [[UIApplication sharedApplication] setKeepAliveTimeout:600 handler:nil] ;
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,6 +116,22 @@
     [_textViewSend resignFirstResponder] ;
 }
 
+- (void)handleDidEnterBackgroundNotification:(NSNotification *)notification
+{
+    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification) ;
+    
+    [[UIApplication sharedApplication] setKeepAliveTimeout:600 handler:^{
+        // check the connection state
+        if (!_connection || _connection.isConnect) {
+            NSLog(@"the connection is lost, now reconnect to server") ;
+            _connection = nil ;
+            // reconnect to server
+            _connection = [[KDCFNetworkConnection alloc] initWithDelegate:self] ;
+            [_connection connect] ;
+        }
+    }] ;
+}
+
 - (void)presentLocalNotificationMessage:(NSString *)message
 {
     UILocalNotification *localNotif = [[UILocalNotification alloc] init];
@@ -127,14 +152,12 @@
 
 - (NSString *)ipAddress
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"] ;
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path] ;
-    return [dict objectForKey:@"serverIp"] ;
+    return [KDConfig sharedConfig].serverIp ;
 }
 
 - (uint16_t)port
 {
-    return (uint16_t)7001 ;
+    return [KDConfig sharedConfig].serverPort ;
 }
 
 - (void)dataReceived:(KDPacket *)packet

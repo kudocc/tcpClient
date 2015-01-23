@@ -4,5 +4,7 @@
 <dict>
 	<key>serverIp</key>
 	<string>172.16.40.62</string>
+	<key>serverPort</key>
+	<integer>7001</integer>
 </dict>
 </plist>
