@@ -1,7 +1,7 @@
 tcpClient
 =========
 
-iOS app using socket to interact with [simple echo server](https://github.com/kudocc/simpleServer) (support VoIP which means when application is suspended, it can receive the packet sended from server on VoIp socket)
+iOS app using custom protocol to interact with [simple echo server](https://github.com/kudocc/simpleServer) (support VoIP which means when application is suspended, it can receive the packet sended from server on VoIp socket)
 
 Before build the project, you should change the server ip address in `config.plist` file.
 
