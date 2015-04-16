@@ -13,7 +13,7 @@
 + (KDConfig *)sharedConfig
 {
     static KDConfig *sharedInstance = nil ;
-    dispatch_once_t onceToken ;
+    static dispatch_once_t onceToken ;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[KDConfig alloc] init] ;
     }) ;

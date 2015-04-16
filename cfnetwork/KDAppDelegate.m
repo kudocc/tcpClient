@@ -18,6 +18,20 @@
     // Override point for customization after application launch.
     return YES;
 }
+
+/*
+- (void)redirectNSlogToDocumentFolder
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSString *fileName = [NSString stringWithFormat:@"cfnetwork.log"];
+    NSString *logFilePath = [documentDirectory stringByAppendingPathComponent:fileName];
+    
+    // redirect the NSLog to cfnetwork.log
+    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stdout);
+    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stderr);
+}
+ */
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
