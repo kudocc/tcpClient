@@ -32,6 +32,7 @@ typedef enum eNetworkState {
 @property (nonatomic, assign) NetworkState networkState ;
 @property (nonatomic, strong) KDPacketSendList *packetSendList ;
 
+
 @property (nonatomic, strong) NSInputStream *inputStream ;
 @property (nonatomic, strong) NSOutputStream *outputStream ;
 
