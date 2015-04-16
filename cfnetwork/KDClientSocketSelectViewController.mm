@@ -54,7 +54,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _connection = [[KDConnection alloc] initWithDelegate:self] ;
-    _connection.voipSupport = YES ;
+    _connection.voipSupport = NO ;
     [_connection connect] ;
     
     _textViewRecv.editable = NO ;

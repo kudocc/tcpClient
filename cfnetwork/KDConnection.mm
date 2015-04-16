@@ -65,9 +65,10 @@ typedef enum eNetworkState {
 - (void)connect
 {
     if (_threadNetwork) {
+        NSAssert(NO, @"ERROR") ;
         return ;
     } else {
-        _threadNetwork = [[NSThread alloc] initWithTarget:self selector:@selector(threadEntry) object:nil] ;
+        _threadNetwork = [[NSThread alloc] initWithTarget:self selector:@selector(threadEntry:) object:nil] ;
         [_threadNetwork start] ;
     }
 }
@@ -119,7 +120,7 @@ typedef enum eNetworkState {
 
 #pragma mark - receive thread
 
-- (void)threadEntry
+- (void)threadEntry:(id)threadObj
 {
     @autoreleasepool {
         uint16_t port = [_delegate port] ;
@@ -155,6 +156,24 @@ typedef enum eNetworkState {
                 self.networkState = NetworkStateConnected ;
                 [_delegate connectionDidConnect] ;
             }) ;
+            /*
+            dispatch_source_t readSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_READ, clientSocket, 0, dispatch_get_main_queue()) ;
+            if (readSource) {
+                dispatch_source_set_event_handler(readSource, ^{ @autoreleasepool {
+                    unsigned long ul = dispatch_source_get_data(readSource) ;
+                    printf("read source event handler %ld\n", ul) ;
+                }});
+                dispatch_resume(readSource) ;
+            }
+            
+            dispatch_source_t writeSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_WRITE, clientSocket, 0, dispatch_get_main_queue()) ;
+            if (writeSource) {
+                dispatch_source_set_event_handler(writeSource, ^{
+                    unsigned long ul = dispatch_source_get_data(writeSource) ;
+                    printf("write source event handler %ld\n", ul) ;
+                }) ;
+                dispatch_resume(writeSource) ;
+            }*/
             
             // set clientSocket to O_NONBLOCK
             int val = fcntl(clientSocket, F_GETFL, 0) ;
@@ -162,7 +181,7 @@ typedef enum eNetworkState {
             
             CPacketMemoryManager manager = CPacketMemoryManager() ;
             // select , time out is 1 second
-            while (1 && ![_threadNetwork isCancelled]) {
+            while (![_threadNetwork isCancelled]) {
                 @autoreleasepool {
                     struct timeval timeout ;
                     timeout.tv_sec = 1 ;
