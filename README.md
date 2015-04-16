@@ -1,10 +1,12 @@
 tcpClient
 =========
 
-iOS app using socket to interact with simple server (support voip)
+iOS app using custom protocol to interact with [simple echo server](https://github.com/kudocc/simpleServer) (support VoIP which means when application is suspended, it can receive the packet sended from server on VoIp socket)
 
-You can custom the protocol, all custom protocols are a subclass of BaseNetworkPacket, there is an example protocol named TextPacket. Two c++ class CSerialization and CDeserialization implement serialization and deserialization.
+Before build the project, you should change the ip address and port of your sever in `config.plist` file.
 
-KDConnection class is a tcp connection manager with select mode(implement by socket), you can test it in KDClientSocketSelectViewController class.
+You can send some text to echo server and receive the text from server. When we receive a packet from server, if app is in background, I present a local notification to notify user, I think it's a standard way for VoIP application.
 
-KDCFNetworkConnection class is a tcp connection manager support voip (implement by CFNetWork.framework), you can test it in KDSocketCFNetworkViewController class.
+There are two implementations on tcp client, one is based on C socket, the other is Core Foundation streams.
+
+You can custom the protocol, all custom protocols are subclass from `BaseNetworkPacket` class. There is an example protocol named TextPacket, you can create another one like it. Two c++ class `CSerialization` and `CDeserialization` implement serialization and deserialization.
