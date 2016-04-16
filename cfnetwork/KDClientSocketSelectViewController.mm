@@ -54,7 +54,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _connection = [[KDConnection alloc] initWithDelegate:self] ;
-    _connection.voipSupport = NO ;
+    _connection.voipSupport = NO;
     [_connection connect] ;
     
     _textViewRecv.editable = NO ;
@@ -124,7 +124,7 @@
     
     [[UIApplication sharedApplication] setKeepAliveTimeout:600 handler:^{
         // check the connection state
-        if (!_connection || _connection.isConnect) {
+        if (!_connection || !_connection.isConnect) {
             NSLog(@"the connection is lost, now reconnect to server") ;
             _connection = nil ;
             // reconnect to server
