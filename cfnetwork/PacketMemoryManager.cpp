@@ -37,7 +37,7 @@ unsigned char * CPacketMemoryManager::getBufferPointer()
     }
 }
 
-void CPacketMemoryManager::addToBuffer(unsigned char *data, unsigned int len)
+void CPacketMemoryManager::addToBuffer(const unsigned char *data, unsigned int len)
 {
     unsigned int originalLen = bufferUseLength ;
     bufferUseLength += len ;

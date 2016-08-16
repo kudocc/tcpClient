@@ -36,6 +36,15 @@
 		27BCFB9419CA7B84005203F8 /* KDCFNetworkConnection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 27BCFB9319CA7B84005203F8 /* KDCFNetworkConnection.mm */; };
 		27BD8CAC198F2474001A96D6 /* KDHttpsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8CAB198F2474001A96D6 /* KDHttpsViewController.m */; };
 		27BD8CAF198F31C7001A96D6 /* srca.cer in Resources */ = {isa = PBXBuildFile; fileRef = 27BD8CAE198F31C7001A96D6 /* srca.cer */; };
+		2D82D7AEAC9E5D1040830027 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D5ACF5A21EAE3D6CC4F71D /* libPods.a */; };
+		A7A0815A1D58218F00076A09 /* KDGCDAsyncSocketViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A081591D58218F00076A09 /* KDGCDAsyncSocketViewController.mm */; };
+		A7A081761D58225100076A09 /* HKAutoresizeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A0815D1D58225100076A09 /* HKAutoresizeTextView.m */; };
+		A7A081781D58225100076A09 /* HKMessageTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A081611D58225100076A09 /* HKMessageTextTableViewCell.m */; };
+		A7A0817D1D58225100076A09 /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A0816B1D58225100076A09 /* UIColor+Util.m */; };
+		A7A0817F1D58225100076A09 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A0816F1D58225100076A09 /* UIImage+Util.m */; };
+		A7A081811D58225100076A09 /* UIPullMoreTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A081731D58225100076A09 /* UIPullMoreTableView.m */; };
+		A7A081821D58225100076A09 /* UIView+Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A081751D58225100076A09 /* UIView+Coordinate.m */; };
+		A7A081851D5830B300076A09 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A081841D5830B300076A09 /* Message.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2749E58D88D2AE5EB9B7A4B0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		27B0225819C969D000D1425C /* KDConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDConnection.h; sourceTree = "<group>"; };
 		27B0225919C969D000D1425C /* KDConnection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KDConnection.mm; sourceTree = "<group>"; };
 		27B2CEAC199C499100FAEB71 /* KDSocketCFNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDSocketCFNetworkViewController.h; sourceTree = "<group>"; };
@@ -99,6 +109,24 @@
 		27BD8CAA198F2474001A96D6 /* KDHttpsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDHttpsViewController.h; sourceTree = "<group>"; };
 		27BD8CAB198F2474001A96D6 /* KDHttpsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDHttpsViewController.m; sourceTree = "<group>"; };
 		27BD8CAE198F31C7001A96D6 /* srca.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = srca.cer; sourceTree = "<group>"; };
+		5A9DA1C39FB9A26EF476F581 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		69D5ACF5A21EAE3D6CC4F71D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7A081581D58218F00076A09 /* KDGCDAsyncSocketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDGCDAsyncSocketViewController.h; sourceTree = "<group>"; };
+		A7A081591D58218F00076A09 /* KDGCDAsyncSocketViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KDGCDAsyncSocketViewController.mm; sourceTree = "<group>"; };
+		A7A0815C1D58225100076A09 /* HKAutoresizeTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKAutoresizeTextView.h; sourceTree = "<group>"; };
+		A7A0815D1D58225100076A09 /* HKAutoresizeTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKAutoresizeTextView.m; sourceTree = "<group>"; };
+		A7A081601D58225100076A09 /* HKMessageTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKMessageTextTableViewCell.h; sourceTree = "<group>"; };
+		A7A081611D58225100076A09 /* HKMessageTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKMessageTextTableViewCell.m; sourceTree = "<group>"; };
+		A7A0816A1D58225100076A09 /* UIColor+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
+		A7A0816B1D58225100076A09 /* UIColor+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
+		A7A0816E1D58225100076A09 /* UIImage+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Util.h"; sourceTree = "<group>"; };
+		A7A0816F1D58225100076A09 /* UIImage+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Util.m"; sourceTree = "<group>"; };
+		A7A081721D58225100076A09 /* UIPullMoreTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPullMoreTableView.h; sourceTree = "<group>"; };
+		A7A081731D58225100076A09 /* UIPullMoreTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPullMoreTableView.m; sourceTree = "<group>"; };
+		A7A081741D58225100076A09 /* UIView+Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Coordinate.h"; sourceTree = "<group>"; };
+		A7A081751D58225100076A09 /* UIView+Coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Coordinate.m"; sourceTree = "<group>"; };
+		A7A081831D5830B300076A09 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		A7A081841D5830B300076A09 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +137,7 @@
 				27B4BD8919764BE700492E69 /* CoreGraphics.framework in Frameworks */,
 				27B4BD8B19764BE700492E69 /* UIKit.framework in Frameworks */,
 				27B4BD8719764BE700492E69 /* Foundation.framework in Frameworks */,
+				2D82D7AEAC9E5D1040830027 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +181,8 @@
 				27B48339197CA7B000660458 /* KDClientSocketSelectViewController.mm */,
 				27B2CEAC199C499100FAEB71 /* KDSocketCFNetworkViewController.h */,
 				27B2CEAD199C499100FAEB71 /* KDSocketCFNetworkViewController.mm */,
+				A7A081581D58218F00076A09 /* KDGCDAsyncSocketViewController.h */,
+				A7A081591D58218F00076A09 /* KDGCDAsyncSocketViewController.mm */,
 				27BD8CAA198F2474001A96D6 /* KDHttpsViewController.h */,
 				27BD8CAB198F2474001A96D6 /* KDHttpsViewController.m */,
 				27B4BDBB19764D2E00492E69 /* KDHostViewController.h */,
@@ -167,6 +198,7 @@
 				27B4BDAB19764BE800492E69 /* cfnetworkTests */,
 				27B4BD8519764BE700492E69 /* Frameworks */,
 				27B4BD8419764BE700492E69 /* Products */,
+				F38A2F3DC15876F7E49C4586 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +218,7 @@
 				27B4BD8819764BE700492E69 /* CoreGraphics.framework */,
 				27B4BD8A19764BE700492E69 /* UIKit.framework */,
 				27B4BDA519764BE800492E69 /* XCTest.framework */,
+				69D5ACF5A21EAE3D6CC4F71D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,6 +272,7 @@
 		27BCFB9619CA85A7005203F8 /* utility */ = {
 			isa = PBXGroup;
 			children = (
+				A7A0815B1D58225100076A09 /* Util */,
 				27BCEC7319B83C5D0034E56E /* KDPacketSendList.h */,
 				27BCEC7419B83C5D0034E56E /* KDPacketSendList.mm */,
 				27B3D93019B55E780071277C /* KDNetworkUtility.h */,
@@ -261,6 +295,36 @@
 			path = cer;
 			sourceTree = "<group>";
 		};
+		A7A0815B1D58225100076A09 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A7A0815C1D58225100076A09 /* HKAutoresizeTextView.h */,
+				A7A0815D1D58225100076A09 /* HKAutoresizeTextView.m */,
+				A7A081601D58225100076A09 /* HKMessageTextTableViewCell.h */,
+				A7A081611D58225100076A09 /* HKMessageTextTableViewCell.m */,
+				A7A0816A1D58225100076A09 /* UIColor+Util.h */,
+				A7A0816B1D58225100076A09 /* UIColor+Util.m */,
+				A7A0816E1D58225100076A09 /* UIImage+Util.h */,
+				A7A0816F1D58225100076A09 /* UIImage+Util.m */,
+				A7A081721D58225100076A09 /* UIPullMoreTableView.h */,
+				A7A081731D58225100076A09 /* UIPullMoreTableView.m */,
+				A7A081741D58225100076A09 /* UIView+Coordinate.h */,
+				A7A081751D58225100076A09 /* UIView+Coordinate.m */,
+				A7A081831D5830B300076A09 /* Message.h */,
+				A7A081841D5830B300076A09 /* Message.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		F38A2F3DC15876F7E49C4586 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A9DA1C39FB9A26EF476F581 /* Pods.debug.xcconfig */,
+				2749E58D88D2AE5EB9B7A4B0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,9 +332,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27B4BDB519764BE800492E69 /* Build configuration list for PBXNativeTarget "cfnetwork" */;
 			buildPhases = (
+				782F494268961CE079C4B04D /* Check Pods Manifest.lock */,
 				27B4BD7F19764BE700492E69 /* Sources */,
 				27B4BD8019764BE700492E69 /* Frameworks */,
 				27B4BD8119764BE700492E69 /* Resources */,
+				8A5758C1A066D9710A0AEB48 /* Embed Pods Frameworks */,
+				EABB87545804EB4DF24FCC77 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -306,10 +373,11 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = KD;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = KudoCC;
 				TargetAttributes = {
 					27B4BD8219764BE700492E69 = {
+						DevelopmentTeam = VM764RFM6S;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -363,6 +431,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		782F494268961CE079C4B04D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8A5758C1A066D9710A0AEB48 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EABB87545804EB4DF24FCC77 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		27B4BD7F19764BE700492E69 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -371,13 +487,21 @@
 				27BCEC7519B83C5D0034E56E /* KDPacketSendList.mm in Sources */,
 				27B4741019ADBD7A0028AE20 /* UIDevice+Network.m in Sources */,
 				27B4BDBD19764D2E00492E69 /* KDHostViewController.m in Sources */,
+				A7A081781D58225100076A09 /* HKMessageTextTableViewCell.m in Sources */,
+				A7A0815A1D58218F00076A09 /* KDGCDAsyncSocketViewController.mm in Sources */,
+				A7A081811D58225100076A09 /* UIPullMoreTableView.m in Sources */,
 				27BAABC819B6BAAD00C12C92 /* CDeserialization.cpp in Sources */,
 				27BD8CAC198F2474001A96D6 /* KDHttpsViewController.m in Sources */,
 				27B306C81999EA3900DF756E /* PacketMemoryManager.cpp in Sources */,
+				A7A081761D58225100076A09 /* HKAutoresizeTextView.m in Sources */,
+				A7A081851D5830B300076A09 /* Message.m in Sources */,
+				A7A081821D58225100076A09 /* UIView+Coordinate.m in Sources */,
 				27B4BD9319764BE800492E69 /* main.m in Sources */,
+				A7A0817D1D58225100076A09 /* UIColor+Util.m in Sources */,
 				27B0225A19C969D000D1425C /* KDConnection.mm in Sources */,
 				27B3D93219B55E780071277C /* KDNetworkUtility.mm in Sources */,
 				27B306C51999C1CF00DF756E /* KDPacket.mm in Sources */,
+				A7A0817F1D58225100076A09 /* UIImage+Util.m in Sources */,
 				27B61F571A70DA820080E137 /* KDConfig.m in Sources */,
 				27B2CEAE199C499100FAEB71 /* KDSocketCFNetworkViewController.mm in Sources */,
 				27B4BD9719764BE800492E69 /* KDAppDelegate.m in Sources */,
@@ -451,6 +575,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -505,6 +630,7 @@
 		};
 		27B4BDB619764BE800492E69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A9DA1C39FB9A26EF476F581 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -514,6 +640,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cfnetwork/cfnetwork-Prefix.pch";
 				INFOPLIST_FILE = "cfnetwork/cfnetwork-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.duxing.cfnetwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -522,6 +649,7 @@
 		};
 		27B4BDB719764BE800492E69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2749E58D88D2AE5EB9B7A4B0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -530,6 +658,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cfnetwork/cfnetwork-Prefix.pch";
 				INFOPLIST_FILE = "cfnetwork/cfnetwork-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.duxing.cfnetwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -552,6 +681,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "cfnetworkTests/cfnetworkTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KudoCC.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -570,6 +700,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cfnetwork/cfnetwork-Prefix.pch";
 				INFOPLIST_FILE = "cfnetworkTests/cfnetworkTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KudoCC.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

@@ -22,7 +22,7 @@ public:
 public:
     unsigned int getUseBufferLength() ;
     unsigned char * getBufferPointer() ;
-    void addToBuffer(unsigned char *data, unsigned int len) ;
+    void addToBuffer(const unsigned char *data, unsigned int len) ;
     void removeBuffer(unsigned int len) ;
 };
 
